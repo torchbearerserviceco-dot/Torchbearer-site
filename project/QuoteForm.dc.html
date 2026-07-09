@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+</helmet>
+
+<div style="{{ shellStyle }}">
+
+  <sc-if value="{{ submitted }}" hint-placeholder-val="{{ false }}">
+    <div style="display:flex; flex-direction:column; align-items:center; text-align:center; padding:22px 8px 12px;">
+      <div style="width:84px; height:84px; border-radius:999px; background:linear-gradient(135deg,#E0A028,#F4C869); display:flex; align-items:center; justify-content:center; box-shadow:0 12px 30px rgba(224,160,40,.4);">
+        <span style="font:700 46px/1 Oswald,sans-serif; color:#0c1d39;">✓</span>
+      </div>
+      <div style="margin-top:22px; font:700 32px/1.02 Oswald,sans-serif; text-transform:uppercase; letter-spacing:.01em; color:{{ headingColor }};">Your request is in.</div>
+      <div style="margin-top:12px; max-width:380px; font:500 17px/1.5 Barlow,sans-serif; color:{{ mutedColor }};">Thanks{{ nameSuffix }} — we've got your project details. Expect a straight, hard bid back soon. No obligation, no sales runaround.</div>
+      <button type="button" onClick="{{ reset }}" style="margin-top:24px; font:600 14px/1 Barlow,sans-serif; letter-spacing:.02em; color:{{ mutedColor }}; background:none; border:none; text-decoration:underline; text-underline-offset:3px; cursor:pointer;">Submit another project</button>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ notSubmitted }}" hint-placeholder-val="{{ true }}">
+    <div>
+      <div style="display:flex; flex-direction:column; gap:14px;">
+
+        <div style="display:flex; gap:12px; flex-wrap:wrap;">
+          <label style="flex:1 1 160px; display:flex; flex-direction:column; gap:6px;">
+            <span style="font:600 12px/1 Oswald,sans-serif; letter-spacing:.14em; text-transform:uppercase; color:{{ labelColor }};">First name</span>
+            <input type="text" value="{{ firstName }}" onInput="{{ onName }}" placeholder="John" style="{{ inputStyle }}">
+          </label>
+          <label style="flex:1 1 160px; display:flex; flex-direction:column; gap:6px;">
+            <span style="font:600 12px/1 Oswald,sans-serif; letter-spacing:.14em; text-transform:uppercase; color:{{ labelColor }};">Email</span>
+            <input type="email" value="{{ email }}" onInput="{{ onEmail }}" placeholder="you@email.com" style="{{ inputStyle }}">
+          </label>
+        </div>
+
+        <label style="display:flex; flex-direction:column; gap:6px;">
+          <span style="font:600 12px/1 Oswald,sans-serif; letter-spacing:.14em; text-transform:uppercase; color:{{ labelColor }};">Tell us about the project</span>
+          <textarea onInput="{{ onDescription }}" rows="3" placeholder="e.g. 40ft of privacy fence along the back property line, plus a gate…" style="{{ textareaStyle }}"></textarea>
+        </label>
+
+        <div style="display:flex; flex-direction:column; gap:8px;">
+          <span style="font:600 12px/1 Oswald,sans-serif; letter-spacing:.14em; text-transform:uppercase; color:{{ labelColor }};">Add photos <span style="color:{{ mutedColor }}; text-transform:none; letter-spacing:0; font-weight:500;">— the more we see, the tighter the bid</span></span>
+          <label style="{{ dropStyle }}">
+            <input type="file" accept="image/*" multiple onChange="{{ onFiles }}" style="display:none;">
+            <span style="font:700 24px/1 Oswald,sans-serif; color:#E0A028;">＋</span>
+            <span style="font:600 14px/1.3 Barlow,sans-serif; color:{{ mutedColor }};">Click to upload photos</span>
+          </label>
+          <sc-if value="{{ hasPhotos }}" hint-placeholder-val="{{ false }}">
+            <div style="display:flex; flex-wrap:wrap; gap:8px; margin-top:2px;">
+              <sc-for list="{{ photos }}" as="photo" hint-placeholder-count="0">
+                <div style="position:relative; width:60px; height:60px; border-radius:8px; overflow:hidden; box-shadow:0 3px 10px rgba(0,0,0,.25);">
+                  <img src="{{ photo.url }}" alt="upload" style="width:100%; height:100%; object-fit:cover; display:block;">
+                  <button type="button" onClick="{{ photo.remove }}" style="position:absolute; top:2px; right:2px; width:18px; height:18px; border-radius:999px; border:none; background:rgba(6,18,42,.82); color:#fff; font:700 11px/1 Barlow,sans-serif; cursor:pointer; display:flex; align-items:center; justify-content:center;">✕</button>
+                </div>
+              </sc-for>
+            </div>
+          </sc-if>
+        </div>
+
+        <sc-if value="{{ showError }}" hint-placeholder-val="{{ false }}">
+          <div style="font:500 13px/1.3 Barlow,sans-serif; color:#e8623a;">Please add your first name and a valid email so we can send your bid.</div>
+        </sc-if>
+
+        <button type="button" onClick="{{ submit }}" style="{{ buttonStyle }}" style-hover="{{ buttonHoverStyle }}">
+          {{ buttonLabel }} <span style="font-size:1.15em;">→</span>
+        </button>
+        <div style="text-align:center; font:500 12.5px/1.4 Barlow,sans-serif; color:{{ mutedColor }};">One quote. One time. No hidden fees — no obligation.</div>
+      </div>
+    </div>
+  </sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:460,&quot;height&quot;:560},&quot;theme&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;onLight&quot;,&quot;onDark&quot;],&quot;default&quot;:&quot;onLight&quot;,&quot;tsType&quot;:&quot;'onLight'|'onDark'&quot;},&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#E0A028&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;buttonLabel&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Get my free bid&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;services&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;string[]&quot;}}">
+class Component extends DCLogic {
+  state = { firstName: "", email: "", service: "", description: "", photos: [], submitted: false, showError: false };
+
+  get onDark() { return (this.props.theme ?? "onLight") === "onDark"; }
+
+  onName = (e) => this.setState({ firstName: e.target.value, showError: false });
+  onEmail = (e) => this.setState({ email: e.target.value, showError: false });
+  onService = (e) => this.setState({ service: e.target.value });
+  onDescription = (e) => this.setState({ description: e.target.value });
+
+  onFiles = (e) => {
+    const files = Array.from(e.target.files || []);
+    files.forEach((f) => {
+      const reader = new FileReader();
+      reader.onload = (ev) => {
+        this.setState((s) => ({ photos: [...s.photos, { id: Math.random().toString(36).slice(2), url: ev.target.result }] }));
+      };
+      reader.readAsDataURL(f);
+    });
+    e.target.value = "";
+  };
+
+  removePhoto = (id) => this.setState((s) => ({ photos: s.photos.filter((p) => p.id !== id) }));
+
+  submit = () => {
+    const okName = this.state.firstName.trim().length > 0;
+    const okEmail = /.+@.+\..+/.test(this.state.email.trim());
+    if (!okName || !okEmail) { this.setState({ showError: true }); return; }
+    this.setState({ submitted: true, showError: false });
+  };
+
+  reset = () => this.setState({ firstName: "", email: "", service: "", description: "", photos: [], submitted: false, showError: false });
+
+  renderVals() {
+    const dark = this.onDark;
+    const accent = this.props.accent ?? "#E0A028";
+    const services = this.props.services ?? [
+      "Handyman / Repairs", "Trim & Custom Carpentry", "Fencing", "Decks & Sheds",
+      "Land Clearing", "Insulation", "Fixture Installation", "Renovation", "Something else"
+    ];
+
+    const headingColor = dark ? "#F5ECD6" : "#0c1d39";
+    const labelColor = dark ? "#A9C6E2" : "#0c1d39";
+    const mutedColor = dark ? "rgba(169,198,226,.85)" : "rgba(12,29,57,.62)";
+    const fieldBg = dark ? "rgba(255,255,255,.06)" : "#ffffff";
+    const fieldBorder = dark ? "1px solid rgba(169,198,226,.28)" : "1px solid rgba(12,29,57,.18)";
+    const fieldColor = dark ? "#F5ECD6" : "#0c1d39";
+
+    const inputStyle = {
+      width: "100%", boxSizing: "border-box", padding: "12px 14px", borderRadius: "10px",
+      border: fieldBorder, background: fieldBg, color: fieldColor,
+      font: "500 15px/1.2 Barlow,sans-serif", outline: "none"
+    };
+    const selectStyle = { ...inputStyle, appearance: "none", cursor: "pointer" };
+    const textareaStyle = { ...inputStyle, resize: "vertical", minHeight: "78px", font: "500 15px/1.45 Barlow,sans-serif" };
+
+    const dropStyle = {
+      display: "flex", alignItems: "center", gap: "10px", padding: "14px 16px",
+      borderRadius: "10px", cursor: "pointer",
+      border: dark ? "1.5px dashed rgba(169,198,226,.4)" : "1.5px dashed rgba(12,29,57,.28)",
+      background: dark ? "rgba(255,255,255,.03)" : "rgba(12,29,57,.03)"
+    };
+
+    const buttonStyle = {
+      marginTop: "4px", width: "100%", padding: "16px 20px", borderRadius: "11px", border: "none",
+      cursor: "pointer", background: `linear-gradient(135deg, ${accent}, #F4C869)`, color: "#0c1d39",
+      font: "700 17px/1 Oswald,sans-serif", letterSpacing: ".04em", textTransform: "uppercase",
+      display: "flex", alignItems: "center", justifyContent: "center", gap: "8px",
+      boxShadow: `0 12px 28px ${dark ? "rgba(224,160,40,.4)" : "rgba(224,160,40,.32)"}`,
+      transition: "transform .15s ease, box-shadow .15s ease"
+    };
+    const buttonHoverStyle = { transform: "translateY(-2px)", boxShadow: "0 16px 36px rgba(224,160,40,.5)" };
+
+    const name = this.state.firstName.trim();
+
+    return {
+      shellStyle: { width: "100%" },
+      submitted: this.state.submitted,
+      notSubmitted: !this.state.submitted,
+      firstName: this.state.firstName,
+      email: this.state.email,
+      service: this.state.service,
+      description: this.state.description,
+      services,
+      photos: this.state.photos.map((p) => ({ url: p.url, remove: () => this.removePhoto(p.id) })),
+      hasPhotos: this.state.photos.length > 0,
+      showError: this.state.showError,
+      nameSuffix: name ? `, ${name}` : "",
+      buttonLabel: this.props.buttonLabel ?? "Get my free bid",
+      onName: this.onName, onEmail: this.onEmail, onService: this.onService,
+      onDescription: this.onDescription, onFiles: this.onFiles,
+      submit: this.submit, reset: this.reset,
+      headingColor, labelColor, mutedColor,
+      inputStyle, selectStyle, textareaStyle, dropStyle, buttonStyle, buttonHoverStyle
+    };
+  }
+}
+</script>
+</body>
+</html>
