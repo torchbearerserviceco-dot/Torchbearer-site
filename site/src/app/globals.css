@@ -51,6 +51,8 @@ img {
 }
 
 .tb-nav-cta {
+  flex: none;
+  white-space: nowrap;
   padding: 15px 26px;
   font-size: 16px;
 }
@@ -106,6 +108,9 @@ img {
   .tb-nav-cta {
     padding: 11px 14px;
     font-size: 12.5px;
+  }
+  .tb-nav-cta-long {
+    display: none;
   }
   .tb-section {
     padding: 44px 20px;

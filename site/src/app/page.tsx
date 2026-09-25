@@ -164,7 +164,7 @@ export default function Home() {
               textDecoration: "none",
             }}
           >
-            Get a Free Bid
+            <span className="tb-nav-cta-long">Get a </span>Free Estimate
           </a>
         </div>
       </div>
@@ -285,7 +285,7 @@ export default function Home() {
             <div style={{ font: `700 44px/1 ${oswald}`, color: "rgba(244,200,105,.35)" }}>02</div>
             <div style={{ marginTop: "12px", ...checklistTitleStyle }}>Get one straight number</div>
             <div style={checklistBodyStyle}>
-              A hard bid within one business day. What&rsquo;s on it is what
+              A firm estimate within one business day. What&rsquo;s on it is what
               you pay.
             </div>
           </div>
@@ -322,9 +322,9 @@ export default function Home() {
                 maxWidth: "520px",
               }}
             >
-              Torchbearer was built on a simple frustration: bids that
-              balloon, contractors who vanish, and &ldquo;estimates&rdquo;
-              that estimate nothing. We run it differently — one crew
+              Torchbearer was built on a simple frustration: estimates
+              that balloon, contractors who vanish, and prices that change
+              halfway through the job. We run it differently — one crew
               accountable for the whole job, from the first walkthrough to
               the last coat of paint.
             </p>
@@ -388,7 +388,7 @@ export default function Home() {
                   color: "#3f3a2c",
                 }}
               >
-                The bid they emailed was the check I wrote. Fence, gate,
+                The estimate they emailed was the check I wrote. Fence, gate,
                 haul-away — to the dollar. I&rsquo;ve never had that happen
                 with a contractor.
               </div>
@@ -491,7 +491,7 @@ export default function Home() {
               color: "rgba(12,29,57,.75)",
             }}
           >
-            Free bid. One business day. No obligation.
+            Free estimate. One business day. No obligation.
           </div>
         </div>
         <a
@@ -508,7 +508,7 @@ export default function Home() {
             boxShadow: "0 14px 34px rgba(6,18,42,.35)",
           }}
         >
-          Get my free bid ↑
+          Get my free estimate ↑
         </a>
       </div>
 
