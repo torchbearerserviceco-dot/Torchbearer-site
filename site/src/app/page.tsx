@@ -2,18 +2,6 @@ import Image from "next/image";
 import QuoteForm from "@/components/QuoteForm";
 import { oswald, barlow } from "@/lib/fonts";
 
-const badgeStyle: React.CSSProperties = {
-  display: "inline-flex",
-  alignItems: "center",
-  gap: "8px",
-  padding: "9px 14px",
-  borderRadius: "8px",
-  background: "rgba(169,198,226,.08)",
-  border: "1px solid rgba(169,198,226,.16)",
-  font: `600 13px/1 ${barlow}`,
-  color: "#c3d2e4",
-};
-
 const statLabelStyle: React.CSSProperties = {
   font: `600 12px/1.3 ${barlow}`,
   letterSpacing: ".06em",
@@ -243,11 +231,6 @@ export default function Home() {
                 <span style={statValueStyle}>5+</span>
                 <span style={statLabelStyle}>Trades under one roof</span>
               </div>
-            </div>
-            <div style={{ display: "flex", gap: "14px", marginTop: "36px", flexWrap: "wrap" }}>
-              <span style={badgeStyle}>Licensed &amp; insured</span>
-              <span style={badgeStyle}>Local Knoxville crew</span>
-              <span style={badgeStyle}>Hard bids</span>
             </div>
           </div>
           <div style={{ flex: "1 1 420px", minWidth: "380px", maxWidth: "500px" }}>
