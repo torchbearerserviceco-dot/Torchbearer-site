@@ -76,18 +76,6 @@ img {
   text-transform: uppercase;
 }
 
-.tb-process-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
-@media (max-width: 760px) {
-  .tb-process-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
 @media (max-width: 640px) {
   .tb-nav {
     padding: 14px 20px;

@@ -21,14 +21,6 @@ const eyebrowStyle: React.CSSProperties = {
   color: "#F4C869",
 };
 
-const processCardStyle: React.CSSProperties = {
-  position: "relative",
-  padding: "26px 24px 28px",
-  borderRadius: "12px",
-  background: "rgba(169,198,226,.06)",
-  border: "1px solid rgba(169,198,226,.14)",
-};
-
 const checklistIconStyle: React.CSSProperties = {
   flex: "none",
   width: "34px",
@@ -269,39 +261,6 @@ export default function Home() {
         </div>
       </div>
 
-      {/* PROCESS */}
-      <div className="tb-section" style={{ background: "#06122a" }}>
-        <div style={eyebrowStyle}>How it works</div>
-        <div className="tb-section-h2" style={{ marginTop: "10px", color: "#F5ECD6", maxWidth: "560px" }}>
-          Three steps. Zero surprises.
-        </div>
-        <div className="tb-process-grid" style={{ marginTop: "36px" }}>
-          <div style={processCardStyle}>
-            <div style={{ font: `700 44px/1 ${oswald}`, color: "rgba(244,200,105,.35)" }}>01</div>
-            <div style={{ marginTop: "12px", ...checklistTitleStyle }}>Send your project</div>
-            <div style={checklistBodyStyle}>
-              Name, email, photos, and a quick description. Two minutes, tops.
-            </div>
-          </div>
-          <div style={processCardStyle}>
-            <div style={{ font: `700 44px/1 ${oswald}`, color: "rgba(244,200,105,.35)" }}>02</div>
-            <div style={{ marginTop: "12px", ...checklistTitleStyle }}>Get one straight number</div>
-            <div style={checklistBodyStyle}>
-              A firm estimate within one business day. What&rsquo;s on it is what
-              you pay.
-            </div>
-          </div>
-          <div style={processCardStyle}>
-            <div style={{ font: `700 44px/1 ${oswald}`, color: "rgba(244,200,105,.35)" }}>03</div>
-            <div style={{ marginTop: "12px", ...checklistTitleStyle }}>We carry it through</div>
-            <div style={checklistBodyStyle}>
-              Showing up when we said, finishing when we promised. Done means
-              done.
-            </div>
-          </div>
-        </div>
-      </div>
-
       {/* WHY + ABOUT */}
       <div
         className="tb-section"
@@ -314,7 +273,7 @@ export default function Home() {
           <div style={{ flex: "1 1 460px", minWidth: "340px" }}>
             <div style={eyebrowStyle}>Why Torchbearer</div>
             <div className="tb-section-h2" style={{ marginTop: "10px", color: "#F5ECD6" }}>
-              We light the way.
+              We light the way forward.
             </div>
             <p
               style={{
