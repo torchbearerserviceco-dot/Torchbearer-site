@@ -207,6 +207,8 @@ export default function Home() {
               }}
             >
               Somebody Has to Build the Real World.
+              <br />
+              Light the way forward.
             </p>
             <div
               style={{
