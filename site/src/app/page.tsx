@@ -124,10 +124,10 @@ export default function Home() {
         <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
           <Image
             src="/logo.png"
-            alt="Torchbearer"
-            width={42}
-            height={42}
-            style={{ height: "42px", width: "auto", display: "block" }}
+            alt="Torchbearer Construction"
+            width={375}
+            height={485}
+            style={{ height: "48px", width: "auto", display: "block" }}
             priority
           />
           <div style={{ lineHeight: 1 }}>
@@ -136,7 +136,7 @@ export default function Home() {
                 font: `700 18px/1 ${oswald}`,
                 letterSpacing: ".06em",
                 textTransform: "uppercase",
-                color: "#F5ECD6",
+                color: "#F4C869",
               }}
             >
               Torchbearer
@@ -150,7 +150,7 @@ export default function Home() {
                 marginTop: "3px",
               }}
             >
-              Service Co.
+              Construction
             </div>
           </div>
         </div>
@@ -428,9 +428,9 @@ export default function Home() {
               <Image
                 src="/logo.png"
                 alt=""
-                width={44}
-                height={44}
-                style={{ height: "44px", width: "auto" }}
+                width={375}
+                height={485}
+                style={{ height: "52px", width: "auto" }}
               />
               <div style={{ font: `500 14.5px/1.45 ${barlow}`, color: "#a7b8cd" }}>
                 Named after the statue — a symbol of the Volunteer creed of
@@ -539,9 +539,9 @@ export default function Home() {
           <Image
             src="/logo.png"
             alt=""
-            width={26}
-            height={26}
-            style={{ height: "26px", width: "auto", opacity: 0.85 }}
+            width={375}
+            height={485}
+            style={{ height: "30px", width: "auto", opacity: 0.85 }}
           />
           <span
             style={{
@@ -551,7 +551,7 @@ export default function Home() {
               color: "#8fa5c0",
             }}
           >
-            Torchbearer Service Co.
+            Torchbearer Construction
           </span>
         </div>
         <span style={{ font: `500 13px/1 ${barlow}`, color: "#5c6f8a" }}>
