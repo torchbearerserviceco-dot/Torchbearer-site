@@ -245,9 +245,9 @@ export default function Home() {
               </div>
             </div>
             <div style={{ display: "flex", gap: "14px", marginTop: "36px", flexWrap: "wrap" }}>
-              <span style={badgeStyle}>✓&nbsp; Licensed &amp; insured</span>
-              <span style={badgeStyle}>✓&nbsp; Local Knoxville crew</span>
-              <span style={badgeStyle}>✓&nbsp; Hard bids</span>
+              <span style={badgeStyle}>Licensed &amp; insured</span>
+              <span style={badgeStyle}>Local Knoxville crew</span>
+              <span style={badgeStyle}>Hard bids</span>
             </div>
           </div>
           <div style={{ flex: "1 1 420px", minWidth: "380px", maxWidth: "500px" }}>
