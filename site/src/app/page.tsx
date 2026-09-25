@@ -218,9 +218,7 @@ export default function Home() {
                 color: "#c3d2e4",
               }}
             >
-              Handyman work, renovation, custom carpentry, fencing, land
-              clearing — priced straight the first time. The number we quote
-              is the number you pay.
+              Somebody Has to Build the Real World.
             </p>
             <div
               style={{
@@ -233,7 +231,7 @@ export default function Home() {
             >
               <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
                 <span style={statValueStyle}>$0</span>
-                <span style={statLabelStyle}>Hidden fees, ever</span>
+                <span style={statLabelStyle}>Hidden fees</span>
               </div>
               <div style={{ width: "1px", height: "38px", background: "rgba(169,198,226,.2)" }} />
               <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
