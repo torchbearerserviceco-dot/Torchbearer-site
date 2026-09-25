@@ -121,19 +121,23 @@ export default function Home() {
           borderBottom: "1px solid rgba(169,198,226,.14)",
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+        <div className="tb-nav-brand" style={{ display: "flex", alignItems: "center" }}>
           <Image
             src="/logo.png"
             alt="Torchbearer Construction"
             width={375}
             height={485}
-            style={{ height: "48px", width: "auto", display: "block" }}
+            className="tb-nav-logo"
+            style={{ width: "auto", display: "block" }}
             priority
           />
           <div style={{ lineHeight: 1 }}>
             <div
+              className="tb-nav-title"
               style={{
-                font: `700 18px/1 ${oswald}`,
+                fontFamily: oswald,
+                fontWeight: 700,
+                lineHeight: 1,
                 letterSpacing: ".06em",
                 textTransform: "uppercase",
                 color: "#F4C869",
@@ -142,12 +146,14 @@ export default function Home() {
               Torchbearer
             </div>
             <div
+              className="tb-nav-sub"
               style={{
-                font: `600 9.5px/1 ${oswald}`,
+                fontFamily: oswald,
+                fontWeight: 600,
+                lineHeight: 1,
                 letterSpacing: ".34em",
                 textTransform: "uppercase",
                 color: "#A9C6E2",
-                marginTop: "3px",
               }}
             >
               Construction
@@ -157,12 +163,14 @@ export default function Home() {
         <div style={{ display: "flex", alignItems: "center", gap: "22px" }}>
           <a
             href="#quote"
+            className="tb-nav-cta"
             style={{
-              padding: "11px 20px",
               borderRadius: "8px",
               background: "linear-gradient(135deg,#E0A028,#F4C869)",
               color: "#0c1d39",
-              font: `700 13px/1 ${oswald}`,
+              fontFamily: oswald,
+              fontWeight: 700,
+              lineHeight: 1,
               letterSpacing: ".06em",
               textTransform: "uppercase",
               textDecoration: "none",
@@ -234,7 +242,7 @@ export default function Home() {
               </div>
               <div style={{ width: "1px", height: "38px", background: "rgba(169,198,226,.2)" }} />
               <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
-                <span style={statValueStyle}>8</span>
+                <span style={statValueStyle}>5+</span>
                 <span style={statLabelStyle}>Trades under one roof</span>
               </div>
             </div>
