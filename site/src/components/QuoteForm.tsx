@@ -284,7 +284,6 @@ export default function QuoteForm({
                 setFirstName(e.target.value);
                 setShowError(false);
               }}
-              placeholder="John"
               style={inputStyle}
             />
           </label>
@@ -313,7 +312,6 @@ export default function QuoteForm({
                 setEmail(e.target.value);
                 setShowError(false);
               }}
-              placeholder="you@email.com"
               style={inputStyle}
             />
           </label>
@@ -334,7 +332,6 @@ export default function QuoteForm({
             value={description}
             onChange={(e) => setDescription(e.target.value)}
             rows={3}
-            placeholder="e.g. 40ft of privacy fence along the back property line, plus a gate…"
             style={textareaStyle}
           />
         </label>
