@@ -249,7 +249,7 @@ export default function Home() {
                   color: "#0c1d39",
                 }}
               >
-                Get your free bid
+                Get your free estimate
               </div>
               <div
                 style={{

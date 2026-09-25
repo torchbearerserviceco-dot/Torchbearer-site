@@ -22,7 +22,7 @@ const MAX_PHOTOS = 8;
 export default function QuoteForm({
   theme = "onLight",
   accent = "#E0A028",
-  buttonLabel = "Get my free bid",
+  buttonLabel = "Get my free estimate",
 }: Props) {
   const dark = theme === "onDark";
 
@@ -230,7 +230,7 @@ export default function QuoteForm({
             }}
           >
             Thanks{nameSuffix} — we&rsquo;ve got your project details. Expect
-            a straight, hard bid back soon. No obligation, no sales
+            a straight estimate back soon. No obligation, no sales
             runaround.
           </div>
           <button
@@ -357,7 +357,7 @@ export default function QuoteForm({
                 fontWeight: 500,
               }}
             >
-              — the more we see, the tighter the bid
+              — the more we see, the tighter the estimate
             </span>
           </span>
           <label style={dropStyle}>
@@ -432,7 +432,7 @@ export default function QuoteForm({
         {showError && (
           <div style={{ font: `500 13px/1.3 ${barlow}`, color: "#e8623a" }}>
             Please add your first name and a valid email so we can send your
-            bid.
+            estimate.
           </div>
         )}
 
