@@ -78,7 +78,7 @@ export async function POST(request: Request) {
   );
 
   const { error } = await resend.emails.send({
-    from: `Torchbearer Website <${fromEmail}>`,
+    from: `Torchbearer Construction Website <${fromEmail}>`,
     to: [toEmail],
     replyTo: email,
     subject: `New quote request from ${firstName}`,

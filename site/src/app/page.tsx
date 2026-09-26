@@ -2,18 +2,6 @@ import Image from "next/image";
 import QuoteForm from "@/components/QuoteForm";
 import { oswald, barlow } from "@/lib/fonts";
 
-const badgeStyle: React.CSSProperties = {
-  display: "inline-flex",
-  alignItems: "center",
-  gap: "8px",
-  padding: "9px 14px",
-  borderRadius: "8px",
-  background: "rgba(169,198,226,.08)",
-  border: "1px solid rgba(169,198,226,.16)",
-  font: `600 13px/1 ${barlow}`,
-  color: "#c3d2e4",
-};
-
 const statLabelStyle: React.CSSProperties = {
   font: `600 12px/1.3 ${barlow}`,
   letterSpacing: ".06em",
@@ -31,14 +19,6 @@ const eyebrowStyle: React.CSSProperties = {
   letterSpacing: ".22em",
   textTransform: "uppercase",
   color: "#F4C869",
-};
-
-const processCardStyle: React.CSSProperties = {
-  position: "relative",
-  padding: "26px 24px 28px",
-  borderRadius: "12px",
-  background: "rgba(169,198,226,.06)",
-  border: "1px solid rgba(169,198,226,.14)",
 };
 
 const checklistIconStyle: React.CSSProperties = {
@@ -107,6 +87,21 @@ const services = [
   { name: "Fixture Install", sub: "Lighting, fans & more" },
 ];
 
+const reviews = [
+  {
+    name: "Verified Homeowner",
+    project: "Interior trim & decorative moldings",
+    quote:
+      "Torchbearer removed, replaced, and painted the interior trim and installed the decorative wood panelling on the basement over-head. They were detail-oriented and communicated well, completing my projects at a fair price. I would definitely recommend them to anyone looking to have work done around the house.",
+  },
+  {
+    name: "Verified Homeowner",
+    project: "Handyman — stair railing & small projects",
+    quote:
+      "Grant with Torchbearer was very helpful when I needed this stair railing replaced and multiple other small projects completed. Their communication was reliable and the results were what I was looking for. I would reccomend.",
+  },
+];
+
 export default function Home() {
   return (
     <div style={{ background: "#06122a", fontFamily: barlow, color: "#eaf0f8" }}>
@@ -121,54 +116,62 @@ export default function Home() {
           borderBottom: "1px solid rgba(169,198,226,.14)",
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+        <div className="tb-nav-brand" style={{ display: "flex", alignItems: "center" }}>
           <Image
             src="/logo.png"
-            alt="Torchbearer"
-            width={42}
-            height={42}
-            style={{ height: "42px", width: "auto", display: "block" }}
+            alt="Torchbearer Construction"
+            width={375}
+            height={485}
+            className="tb-nav-logo"
+            style={{ width: "auto", display: "block" }}
             priority
           />
           <div style={{ lineHeight: 1 }}>
             <div
+              className="tb-nav-title"
               style={{
-                font: `700 18px/1 ${oswald}`,
+                fontFamily: oswald,
+                fontWeight: 700,
+                lineHeight: 1,
                 letterSpacing: ".06em",
                 textTransform: "uppercase",
-                color: "#F5ECD6",
+                color: "#F4C869",
               }}
             >
               Torchbearer
             </div>
             <div
+              className="tb-nav-sub"
               style={{
-                font: `600 9.5px/1 ${oswald}`,
+                fontFamily: oswald,
+                fontWeight: 600,
+                lineHeight: 1,
                 letterSpacing: ".34em",
                 textTransform: "uppercase",
                 color: "#A9C6E2",
-                marginTop: "3px",
               }}
             >
-              Service Co.
+              Construction
             </div>
           </div>
         </div>
         <div style={{ display: "flex", alignItems: "center", gap: "22px" }}>
           <a
             href="#quote"
+            className="tb-nav-cta"
             style={{
-              padding: "11px 20px",
               borderRadius: "8px",
               background: "linear-gradient(135deg,#E0A028,#F4C869)",
               color: "#0c1d39",
-              font: `700 13px/1 ${oswald}`,
+              fontFamily: oswald,
+              fontWeight: 700,
+              lineHeight: 1,
               letterSpacing: ".06em",
               textTransform: "uppercase",
               textDecoration: "none",
             }}
           >
-            Get a Free Bid
+            <span className="tb-nav-cta-long">Get a </span>Free Estimate
           </a>
         </div>
       </div>
@@ -210,9 +213,9 @@ export default function Home() {
                 color: "#c3d2e4",
               }}
             >
-              Handyman work, renovation, custom carpentry, fencing, land
-              clearing — priced straight the first time. The number we quote
-              is the number you pay.
+              Somebody Has to Build the Real World.
+              <br />
+              We light the way forward.
             </p>
             <div
               style={{
@@ -225,7 +228,7 @@ export default function Home() {
             >
               <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
                 <span style={statValueStyle}>$0</span>
-                <span style={statLabelStyle}>Hidden fees, ever</span>
+                <span style={statLabelStyle}>Hidden fees</span>
               </div>
               <div style={{ width: "1px", height: "38px", background: "rgba(169,198,226,.2)" }} />
               <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
@@ -234,14 +237,9 @@ export default function Home() {
               </div>
               <div style={{ width: "1px", height: "38px", background: "rgba(169,198,226,.2)" }} />
               <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
-                <span style={statValueStyle}>8</span>
+                <span style={statValueStyle}>5+</span>
                 <span style={statLabelStyle}>Trades under one roof</span>
               </div>
-            </div>
-            <div style={{ display: "flex", gap: "14px", marginTop: "36px", flexWrap: "wrap" }}>
-              <span style={badgeStyle}>✓&nbsp; Licensed &amp; insured</span>
-              <span style={badgeStyle}>✓&nbsp; Local Knoxville crew</span>
-              <span style={badgeStyle}>✓&nbsp; Hard bids</span>
             </div>
           </div>
           <div style={{ flex: "1 1 420px", minWidth: "380px", maxWidth: "500px" }}>
@@ -260,7 +258,7 @@ export default function Home() {
                   color: "#0c1d39",
                 }}
               >
-                Get your free bid
+                Get your free estimate
               </div>
               <div
                 style={{
@@ -278,39 +276,6 @@ export default function Home() {
         </div>
       </div>
 
-      {/* PROCESS */}
-      <div className="tb-section" style={{ background: "#06122a" }}>
-        <div style={eyebrowStyle}>How it works</div>
-        <div className="tb-section-h2" style={{ marginTop: "10px", color: "#F5ECD6", maxWidth: "560px" }}>
-          Three steps. Zero surprises.
-        </div>
-        <div className="tb-process-grid" style={{ marginTop: "36px" }}>
-          <div style={processCardStyle}>
-            <div style={{ font: `700 44px/1 ${oswald}`, color: "rgba(244,200,105,.35)" }}>01</div>
-            <div style={{ marginTop: "12px", ...checklistTitleStyle }}>Send your project</div>
-            <div style={checklistBodyStyle}>
-              Name, email, photos, and a quick description. Two minutes, tops.
-            </div>
-          </div>
-          <div style={processCardStyle}>
-            <div style={{ font: `700 44px/1 ${oswald}`, color: "rgba(244,200,105,.35)" }}>02</div>
-            <div style={{ marginTop: "12px", ...checklistTitleStyle }}>Get one straight number</div>
-            <div style={checklistBodyStyle}>
-              A hard bid within one business day. What&rsquo;s on it is what
-              you pay.
-            </div>
-          </div>
-          <div style={processCardStyle}>
-            <div style={{ font: `700 44px/1 ${oswald}`, color: "rgba(244,200,105,.35)" }}>03</div>
-            <div style={{ marginTop: "12px", ...checklistTitleStyle }}>We carry it through</div>
-            <div style={checklistBodyStyle}>
-              Showing up when we said, finishing when we promised. Done means
-              done.
-            </div>
-          </div>
-        </div>
-      </div>
-
       {/* WHY + ABOUT */}
       <div
         className="tb-section"
@@ -323,7 +288,7 @@ export default function Home() {
           <div style={{ flex: "1 1 460px", minWidth: "340px" }}>
             <div style={eyebrowStyle}>Why Torchbearer</div>
             <div className="tb-section-h2" style={{ marginTop: "10px", color: "#F5ECD6" }}>
-              We light the way.
+              We light the way forward.
             </div>
             <p
               style={{
@@ -333,9 +298,9 @@ export default function Home() {
                 maxWidth: "520px",
               }}
             >
-              Torchbearer was built on a simple frustration: bids that
-              balloon, contractors who vanish, and &ldquo;estimates&rdquo;
-              that estimate nothing. We run it differently — one crew
+              Torchbearer was built on a simple frustration: estimates
+              that balloon, contractors who vanish, and prices that change
+              halfway through the job. We run it differently — one crew
               accountable for the whole job, from the first walkthrough to
               the last coat of paint.
             </p>
@@ -383,60 +348,53 @@ export default function Home() {
               justifyContent: "center",
             }}
           >
-            <div
-              style={{
-                borderRadius: "12px",
-                background: "#F5ECD6",
-                padding: "26px 24px",
-                boxShadow: "0 20px 50px rgba(0,0,0,.35)",
-              }}
-            >
-              <div style={{ font: `700 64px/1 ${oswald}`, color: "#0c1d39" }}>&ldquo;</div>
+            {reviews.map((review) => (
               <div
+                key={review.project}
                 style={{
-                  marginTop: "-18px",
-                  font: `500 17px/1.55 ${barlow}`,
-                  color: "#3f3a2c",
+                  borderRadius: "12px",
+                  background: "#F5ECD6",
+                  padding: "22px 24px 24px",
+                  boxShadow: "0 20px 50px rgba(0,0,0,.35)",
                 }}
               >
-                The bid they emailed was the check I wrote. Fence, gate,
-                haul-away — to the dollar. I&rsquo;ve never had that happen
-                with a contractor.
+                <div
+                  aria-label="5 out of 5 stars"
+                  style={{ font: `700 18px/1 ${barlow}`, letterSpacing: ".08em", color: "#E0A028" }}
+                >
+                  ★★★★★
+                </div>
+                <div
+                  style={{
+                    marginTop: "12px",
+                    font: `500 16.5px/1.55 ${barlow}`,
+                    color: "#3f3a2c",
+                  }}
+                >
+                  &ldquo;{review.quote}&rdquo;
+                </div>
+                <div
+                  style={{
+                    marginTop: "14px",
+                    font: `700 14px/1 ${oswald}`,
+                    letterSpacing: ".1em",
+                    textTransform: "uppercase",
+                    color: "#0c1d39",
+                  }}
+                >
+                  — {review.name}
+                </div>
+                <div
+                  style={{
+                    marginTop: "6px",
+                    font: `500 13px/1.35 ${barlow}`,
+                    color: "#5d5644",
+                  }}
+                >
+                  {review.project} · Review on Angi
+                </div>
               </div>
-              <div
-                style={{
-                  marginTop: "14px",
-                  font: `700 14px/1 ${oswald}`,
-                  letterSpacing: ".1em",
-                  textTransform: "uppercase",
-                  color: "#0c1d39",
-                }}
-              >
-                — Homeowner, Farragut
-              </div>
-            </div>
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "14px",
-                borderRadius: "12px",
-                border: "1px solid rgba(169,198,226,.18)",
-                padding: "18px 20px",
-              }}
-            >
-              <Image
-                src="/logo.png"
-                alt=""
-                width={44}
-                height={44}
-                style={{ height: "44px", width: "auto" }}
-              />
-              <div style={{ font: `500 14.5px/1.45 ${barlow}`, color: "#a7b8cd" }}>
-                Named after the statue — a symbol of the Volunteer creed of
-                selflessness.
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
@@ -502,7 +460,7 @@ export default function Home() {
               color: "rgba(12,29,57,.75)",
             }}
           >
-            Free bid. One business day. No obligation.
+            Free estimate. One business day. No obligation.
           </div>
         </div>
         <a
@@ -519,7 +477,7 @@ export default function Home() {
             boxShadow: "0 14px 34px rgba(6,18,42,.35)",
           }}
         >
-          Get my free bid ↑
+          Get my free estimate ↑
         </a>
       </div>
 
@@ -539,9 +497,9 @@ export default function Home() {
           <Image
             src="/logo.png"
             alt=""
-            width={26}
-            height={26}
-            style={{ height: "26px", width: "auto", opacity: 0.85 }}
+            width={375}
+            height={485}
+            style={{ height: "30px", width: "auto", opacity: 0.85 }}
           />
           <span
             style={{
@@ -551,7 +509,7 @@ export default function Home() {
               color: "#8fa5c0",
             }}
           >
-            Torchbearer Service Co.
+            Torchbearer Construction
           </span>
         </div>
         <span style={{ font: `500 13px/1 ${barlow}`, color: "#5c6f8a" }}>
