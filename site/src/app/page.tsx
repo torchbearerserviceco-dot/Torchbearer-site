@@ -89,13 +89,13 @@ const services = [
 
 const reviews = [
   {
-    name: "Kirsten J.",
+    name: "Verified Homeowner",
     project: "Interior trim & decorative moldings",
     quote:
       "Torchbearer removed, replaced, and painted the interior trim and installed the decorative wood panelling on the basement over-head. They were detail-oriented and communicated well, completing my projects at a fair price. I would definitely recommend them to anyone looking to have work done around the house.",
   },
   {
-    name: "Kirsten J.",
+    name: "Verified Homeowner",
     project: "Handyman — stair railing & small projects",
     quote:
       "Grant with Torchbearer was very helpful when I needed this stair railing replaced and multiple other small projects completed. Their communication was reliable and the results were what I was looking for. I would reccomend.",
