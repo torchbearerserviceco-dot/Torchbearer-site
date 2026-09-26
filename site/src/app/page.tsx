@@ -87,6 +87,21 @@ const services = [
   { name: "Fixture Install", sub: "Lighting, fans & more" },
 ];
 
+const reviews = [
+  {
+    name: "Kirsten J.",
+    project: "Interior trim & decorative moldings",
+    quote:
+      "Torchbearer removed, replaced, and painted the interior trim and installed the decorative wood panelling on the basement over-head. They were detail-oriented and communicated well, completing my projects at a fair price. I would definitely recommend them to anyone looking to have work done around the house.",
+  },
+  {
+    name: "Kirsten J.",
+    project: "Handyman — stair railing & small projects",
+    quote:
+      "Grant with Torchbearer was very helpful when I needed this stair railing replaced and multiple other small projects completed. Their communication was reliable and the results were what I was looking for. I would reccomend.",
+  },
+];
+
 export default function Home() {
   return (
     <div style={{ background: "#06122a", fontFamily: barlow, color: "#eaf0f8" }}>
@@ -333,60 +348,53 @@ export default function Home() {
               justifyContent: "center",
             }}
           >
-            <div
-              style={{
-                borderRadius: "12px",
-                background: "#F5ECD6",
-                padding: "26px 24px",
-                boxShadow: "0 20px 50px rgba(0,0,0,.35)",
-              }}
-            >
-              <div style={{ font: `700 64px/1 ${oswald}`, color: "#0c1d39" }}>&ldquo;</div>
+            {reviews.map((review) => (
               <div
+                key={review.project}
                 style={{
-                  marginTop: "-18px",
-                  font: `500 17px/1.55 ${barlow}`,
-                  color: "#3f3a2c",
+                  borderRadius: "12px",
+                  background: "#F5ECD6",
+                  padding: "22px 24px 24px",
+                  boxShadow: "0 20px 50px rgba(0,0,0,.35)",
                 }}
               >
-                The estimate they emailed was the check I wrote. Fence, gate,
-                haul-away — to the dollar. I&rsquo;ve never had that happen
-                with a contractor.
+                <div
+                  aria-label="5 out of 5 stars"
+                  style={{ font: `700 18px/1 ${barlow}`, letterSpacing: ".08em", color: "#E0A028" }}
+                >
+                  ★★★★★
+                </div>
+                <div
+                  style={{
+                    marginTop: "12px",
+                    font: `500 16.5px/1.55 ${barlow}`,
+                    color: "#3f3a2c",
+                  }}
+                >
+                  &ldquo;{review.quote}&rdquo;
+                </div>
+                <div
+                  style={{
+                    marginTop: "14px",
+                    font: `700 14px/1 ${oswald}`,
+                    letterSpacing: ".1em",
+                    textTransform: "uppercase",
+                    color: "#0c1d39",
+                  }}
+                >
+                  — {review.name}
+                </div>
+                <div
+                  style={{
+                    marginTop: "6px",
+                    font: `500 13px/1.35 ${barlow}`,
+                    color: "#5d5644",
+                  }}
+                >
+                  {review.project} · Review on Angi
+                </div>
               </div>
-              <div
-                style={{
-                  marginTop: "14px",
-                  font: `700 14px/1 ${oswald}`,
-                  letterSpacing: ".1em",
-                  textTransform: "uppercase",
-                  color: "#0c1d39",
-                }}
-              >
-                — Homeowner, Farragut
-              </div>
-            </div>
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "14px",
-                borderRadius: "12px",
-                border: "1px solid rgba(169,198,226,.18)",
-                padding: "18px 20px",
-              }}
-            >
-              <Image
-                src="/logo.png"
-                alt=""
-                width={375}
-                height={485}
-                style={{ height: "52px", width: "auto" }}
-              />
-              <div style={{ font: `500 14.5px/1.45 ${barlow}`, color: "#a7b8cd" }}>
-                Named after the statue — a symbol of the Volunteer creed of
-                selflessness.
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
