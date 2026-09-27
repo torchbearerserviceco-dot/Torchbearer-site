@@ -423,12 +423,12 @@ export default function Home() {
           </span>
         </div>
         <span style={{ font: `500 13px/1 ${barlow}`, color: "#5c6f8a" }}>
-          Greater Knoxville Area, TN · Licensed &amp; insured ·{" "}
+          Greater Knoxville Area, TN ·{" "}
           <a
-            href="mailto:torchbearerserviceco@gmail.com"
+            href="mailto:TorchbearerConstruction@gmail.com"
             style={{ color: "#8fa5c0", textDecoration: "none" }}
           >
-            torchbearerserviceco@gmail.com
+            TorchbearerConstruction@gmail.com
           </a>
         </span>
       </div>
