@@ -46,47 +46,6 @@ const checklistBodyStyle: React.CSSProperties = {
   color: "#a7b8cd",
 };
 
-const medallionStyle: React.CSSProperties = {
-  width: "190px",
-  height: "190px",
-  borderRadius: "999px",
-  background:
-    "radial-gradient(circle at 50% 30%, rgba(244,200,105,.22) 0%, rgba(12,29,57,0) 62%), #0a1830",
-  border: "2px solid #E0A028",
-  boxShadow:
-    "inset 0 0 0 5px #0a1830, inset 0 0 0 6px rgba(244,200,105,.5), 0 14px 34px rgba(0,0,0,.4)",
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "center",
-  justifyContent: "center",
-  gap: "8px",
-  textAlign: "center",
-  padding: "18px",
-};
-
-const medallionTitleStyle: React.CSSProperties = {
-  font: `700 21px/1.1 ${oswald}`,
-  letterSpacing: ".04em",
-  textTransform: "uppercase",
-  color: "#F5ECD6",
-};
-
-const medallionSubStyle: React.CSSProperties = {
-  font: `500 13px/1.35 ${barlow}`,
-  color: "#8fa5c0",
-};
-
-const services = [
-  { name: "Handyman", sub: "Repairs & punch lists" },
-  { name: "Renovation", sub: "Home service & remodel" },
-  { name: "Trim & Carpentry", sub: "Custom millwork" },
-  { name: "Land Clearing", sub: "Lots, brush & grading" },
-  { name: "Fencing", sub: "Privacy, farm & gates" },
-  { name: "Sheds & Decks", sub: "Built to last" },
-  { name: "Insulation", sub: "Attic to crawlspace" },
-  { name: "Fixture Install", sub: "Lighting, fans & more" },
-];
-
 const reviews = [
   {
     name: "Torchbearer Customer",
@@ -388,44 +347,6 @@ export default function Home() {
         </div>
       </div>
 
-      {/* SERVICES */}
-      <div
-        className="tb-section"
-        style={{
-          paddingTop: "64px",
-          paddingBottom: "72px",
-          background: "#0c1d39",
-          borderTop: "1px solid rgba(169,198,226,.12)",
-          borderBottom: "1px solid rgba(169,198,226,.12)",
-        }}
-      >
-        <div style={{ textAlign: "center" }}>
-          <div style={eyebrowStyle}>What we do</div>
-          <div className="tb-section-h2" style={{ marginTop: "10px", color: "#F5ECD6" }}>
-            Eight trades. One crew.
-          </div>
-        </div>
-        <div
-          style={{
-            display: "flex",
-            flexWrap: "wrap",
-            justifyContent: "center",
-            gap: "22px",
-            marginTop: "40px",
-            maxWidth: "1060px",
-            marginLeft: "auto",
-            marginRight: "auto",
-          }}
-        >
-          {services.map((service) => (
-            <div key={service.name} style={medallionStyle}>
-              <span style={medallionTitleStyle}>{service.name}</span>
-              <span style={medallionSubStyle}>{service.sub}</span>
-            </div>
-          ))}
-        </div>
-      </div>
-
       {/* CTA BAND */}
       <div
         style={{
@@ -449,7 +370,7 @@ export default function Home() {
               color: "rgba(12,29,57,.75)",
             }}
           >
-            Free estimate. One business day. No obligation.
+            Free Estimate – No Obligation.
           </div>
         </div>
         <a
