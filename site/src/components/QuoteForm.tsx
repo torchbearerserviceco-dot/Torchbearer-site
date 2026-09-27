@@ -22,7 +22,7 @@ const MAX_PHOTOS = 8;
 export default function QuoteForm({
   theme = "onLight",
   accent = "#E0A028",
-  buttonLabel = "Get my free estimate",
+  buttonLabel = "Get My Estimate",
 }: Props) {
   const dark = theme === "onDark";
 
@@ -447,7 +447,7 @@ export default function QuoteForm({
             color: mutedColor,
           }}
         >
-          One quote. One time. No hidden fees — no obligation.
+          Free Estimate – No Obligation.
         </div>
       </div>
     </div>

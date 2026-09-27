@@ -21,72 +21,6 @@ const eyebrowStyle: React.CSSProperties = {
   color: "#F4C869",
 };
 
-const checklistIconStyle: React.CSSProperties = {
-  flex: "none",
-  width: "34px",
-  height: "34px",
-  borderRadius: "8px",
-  background: "linear-gradient(135deg,#E0A028,#F4C869)",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  font: `700 16px/1 ${oswald}`,
-  color: "#0c1d39",
-};
-
-const checklistTitleStyle: React.CSSProperties = {
-  font: `700 17px/1.2 ${oswald}`,
-  textTransform: "uppercase",
-  color: "#F5ECD6",
-};
-
-const checklistBodyStyle: React.CSSProperties = {
-  marginTop: "4px",
-  font: `500 14.5px/1.5 ${barlow}`,
-  color: "#a7b8cd",
-};
-
-const medallionStyle: React.CSSProperties = {
-  width: "190px",
-  height: "190px",
-  borderRadius: "999px",
-  background:
-    "radial-gradient(circle at 50% 30%, rgba(244,200,105,.22) 0%, rgba(12,29,57,0) 62%), #0a1830",
-  border: "2px solid #E0A028",
-  boxShadow:
-    "inset 0 0 0 5px #0a1830, inset 0 0 0 6px rgba(244,200,105,.5), 0 14px 34px rgba(0,0,0,.4)",
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "center",
-  justifyContent: "center",
-  gap: "8px",
-  textAlign: "center",
-  padding: "18px",
-};
-
-const medallionTitleStyle: React.CSSProperties = {
-  font: `700 21px/1.1 ${oswald}`,
-  letterSpacing: ".04em",
-  textTransform: "uppercase",
-  color: "#F5ECD6",
-};
-
-const medallionSubStyle: React.CSSProperties = {
-  font: `500 13px/1.35 ${barlow}`,
-  color: "#8fa5c0",
-};
-
-const services = [
-  { name: "Handyman", sub: "Repairs & punch lists" },
-  { name: "Renovation", sub: "Home service & remodel" },
-  { name: "Trim & Carpentry", sub: "Custom millwork" },
-  { name: "Land Clearing", sub: "Lots, brush & grading" },
-  { name: "Fencing", sub: "Privacy, farm & gates" },
-  { name: "Sheds & Decks", sub: "Built to last" },
-  { name: "Insulation", sub: "Attic to crawlspace" },
-  { name: "Fixture Install", sub: "Lighting, fans & more" },
-];
-
 const reviews = [
   {
     name: "Torchbearer Customer",
@@ -267,7 +201,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* WHY + ABOUT */}
+      {/* WHY + REVIEWS */}
       <div
         className="tb-section"
         style={{
@@ -275,153 +209,82 @@ export default function Home() {
           borderTop: "1px solid rgba(169,198,226,.1)",
         }}
       >
-        <div style={{ display: "flex", flexWrap: "wrap", gap: "48px" }}>
-          <div style={{ flex: "1 1 460px", minWidth: "340px" }}>
-            <div style={eyebrowStyle}>Why Torchbearer</div>
-            <div className="tb-section-h2" style={{ marginTop: "10px", color: "#F5ECD6" }}>
-              We light the way forward.
-            </div>
-            <p
-              style={{
-                margin: "18px 0 0",
-                font: `500 16.5px/1.6 ${barlow}`,
-                color: "#a7b8cd",
-                maxWidth: "520px",
-              }}
-            >
-              Torchbearer was built on simple frustrations: estimates with
-              hidden costs and unreliable contractors. We do things
-              differently.
-            </p>
-            <div style={{ display: "flex", flexDirection: "column", gap: "14px", marginTop: "28px" }}>
-              <div style={{ display: "flex", gap: "14px", alignItems: "flex-start" }}>
-                <span style={checklistIconStyle}>✓</span>
-                <div>
-                  <div style={checklistTitleStyle}>The price is the price</div>
-                  <div style={checklistBodyStyle}>
-                    No fuel surcharges, no &ldquo;unforeseen conditions&rdquo;
-                    padding, no change-order games.
-                  </div>
-                </div>
-              </div>
-              <div style={{ display: "flex", gap: "14px", alignItems: "flex-start" }}>
-                <span style={checklistIconStyle}>✓</span>
-                <div>
-                  <div style={checklistTitleStyle}>One crew, eight trades</div>
-                  <div style={checklistBodyStyle}>
-                    Carpentry to clearing — no subcontractor roulette, no
-                    finger-pointing.
-                  </div>
-                </div>
-              </div>
-              <div style={{ display: "flex", gap: "14px", alignItems: "flex-start" }}>
-                <span style={checklistIconStyle}>✓</span>
-                <div>
-                  <div style={checklistTitleStyle}>Built for pros too</div>
-                  <div style={checklistBodyStyle}>
-                    Realtors, GCs, and facility managers get the same
-                    straight number — on a timeline you can put in a
-                    contract.
-                  </div>
-                </div>
-              </div>
-            </div>
+        <div style={{ textAlign: "center", maxWidth: "640px", margin: "0 auto" }}>
+          <div style={eyebrowStyle}>Why Torchbearer</div>
+          <div className="tb-section-h2" style={{ marginTop: "10px", color: "#F5ECD6" }}>
+            We light the way forward.
           </div>
-          <div
+          <p
             style={{
-              flex: "1 1 380px",
-              minWidth: "320px",
-              display: "flex",
-              flexDirection: "column",
-              gap: "16px",
-              justifyContent: "center",
+              margin: "18px 0 0",
+              font: `500 16.5px/1.6 ${barlow}`,
+              color: "#a7b8cd",
             }}
           >
-            {reviews.map((review) => (
+            Torchbearer was built on simple frustrations: estimates with
+            hidden costs and unreliable contractors. We do things
+            differently.
+          </p>
+        </div>
+        <div className="tb-reviews-grid" style={{ marginTop: "44px" }}>
+          {reviews.map((review) => (
+            <figure
+              key={review.project}
+              style={{
+                margin: 0,
+                display: "flex",
+                flexDirection: "column",
+                borderRadius: "14px",
+                background: "#F5ECD6",
+                padding: "30px 32px 30px",
+                boxShadow: "0 24px 60px rgba(0,0,0,.4)",
+                borderTop: "4px solid #E0A028",
+              }}
+            >
               <div
-                key={review.project}
+                aria-label="5 out of 5 stars"
+                style={{ font: `700 24px/1 ${barlow}`, letterSpacing: ".1em", color: "#E0A028" }}
+              >
+                ★★★★★
+              </div>
+              <blockquote
                 style={{
-                  borderRadius: "12px",
-                  background: "#F5ECD6",
-                  padding: "22px 24px 24px",
-                  boxShadow: "0 20px 50px rgba(0,0,0,.35)",
+                  margin: "18px 0 0",
+                  flex: 1,
+                  font: `500 19px/1.6 ${barlow}`,
+                  color: "#2f2b20",
+                }}
+              >
+                &ldquo;{review.quote}&rdquo;
+              </blockquote>
+              <figcaption
+                style={{
+                  marginTop: "22px",
+                  paddingTop: "18px",
+                  borderTop: "1px solid rgba(12,29,57,.14)",
                 }}
               >
                 <div
-                  aria-label="5 out of 5 stars"
-                  style={{ font: `700 18px/1 ${barlow}`, letterSpacing: ".08em", color: "#E0A028" }}
-                >
-                  ★★★★★
-                </div>
-                <div
                   style={{
-                    marginTop: "12px",
-                    font: `500 16.5px/1.55 ${barlow}`,
-                    color: "#3f3a2c",
-                  }}
-                >
-                  &ldquo;{review.quote}&rdquo;
-                </div>
-                <div
-                  style={{
-                    marginTop: "14px",
-                    font: `700 14px/1 ${oswald}`,
+                    font: `700 15px/1 ${oswald}`,
                     letterSpacing: ".1em",
                     textTransform: "uppercase",
                     color: "#0c1d39",
                   }}
                 >
-                  — {review.name}
+                  {review.name}
                 </div>
                 <div
                   style={{
-                    marginTop: "6px",
-                    font: `500 13px/1.35 ${barlow}`,
+                    marginTop: "7px",
+                    font: `500 13.5px/1.35 ${barlow}`,
                     color: "#5d5644",
                   }}
                 >
                   {review.project} · Review from Angi
                 </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* SERVICES */}
-      <div
-        className="tb-section"
-        style={{
-          paddingTop: "64px",
-          paddingBottom: "72px",
-          background: "#0c1d39",
-          borderTop: "1px solid rgba(169,198,226,.12)",
-          borderBottom: "1px solid rgba(169,198,226,.12)",
-        }}
-      >
-        <div style={{ textAlign: "center" }}>
-          <div style={eyebrowStyle}>What we do</div>
-          <div className="tb-section-h2" style={{ marginTop: "10px", color: "#F5ECD6" }}>
-            Eight trades. One crew.
-          </div>
-        </div>
-        <div
-          style={{
-            display: "flex",
-            flexWrap: "wrap",
-            justifyContent: "center",
-            gap: "22px",
-            marginTop: "40px",
-            maxWidth: "1060px",
-            marginLeft: "auto",
-            marginRight: "auto",
-          }}
-        >
-          {services.map((service) => (
-            <div key={service.name} style={medallionStyle}>
-              <span style={medallionTitleStyle}>{service.name}</span>
-              <span style={medallionSubStyle}>{service.sub}</span>
-            </div>
+              </figcaption>
+            </figure>
           ))}
         </div>
       </div>
@@ -449,7 +312,7 @@ export default function Home() {
               color: "rgba(12,29,57,.75)",
             }}
           >
-            Free estimate. One business day. No obligation.
+            Free Estimate – No Obligation.
           </div>
         </div>
         <a
@@ -502,12 +365,12 @@ export default function Home() {
           </span>
         </div>
         <span style={{ font: `500 13px/1 ${barlow}`, color: "#5c6f8a" }}>
-          Greater Knoxville Area, TN · Licensed &amp; insured ·{" "}
+          Greater Knoxville Area, TN ·{" "}
           <a
-            href="mailto:torchbearerserviceco@gmail.com"
+            href="mailto:TorchbearerConstruction@gmail.com"
             style={{ color: "#8fa5c0", textDecoration: "none" }}
           >
-            torchbearerserviceco@gmail.com
+            TorchbearerConstruction@gmail.com
           </a>
         </span>
       </div>
