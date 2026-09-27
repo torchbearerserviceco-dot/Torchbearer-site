@@ -1,4 +1,4 @@
-# Torchbearer Service Co. — landing page
+# Torchbearer Construction — landing page
 
 Production implementation of the "Torchbearer Landing v2" design (see
 `../chats/chat1.md` and `../project/Torchbearer Landing v2.dc.html` for the
@@ -61,4 +61,5 @@ attachments.
 - `src/app/api/quote/route.ts` — route handler that emails submissions.
 - `src/lib/fonts.ts` — shared Oswald/Barlow font-family strings (fonts are
   self-hosted via `next/font/google`, configured in `src/app/layout.tsx`).
-- `public/logo.png` — the Torchbearer shield mark.
+- `public/logo.png` — the Torchbearer Construction shield emblem (transparent PNG,
+  cut from `../project/uploads/torchbearer-construction-logo.webp`).

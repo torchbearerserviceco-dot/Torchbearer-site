@@ -17,9 +17,9 @@ const barlow = Barlow({
 });
 
 export const metadata: Metadata = {
-  title: "Torchbearer Service Co. | One Quote. Not A Dime More.",
+  title: "Torchbearer Construction | One Quote. Not A Dime More.",
   description:
-    "Handyman work, renovation, custom carpentry, fencing, land clearing and more across the Greater Knoxville Area, TN. One straight hard bid — no hidden fees, no surprises.",
+    "Handyman work, renovation, custom carpentry, fencing, land clearing and more across the Greater Knoxville Area, TN. One straight estimate — no hidden fees, no surprises.",
 };
 
 export default function RootLayout({
