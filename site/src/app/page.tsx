@@ -89,13 +89,13 @@ const services = [
 
 const reviews = [
   {
-    name: "Verified Homeowner",
+    name: "Torchbearer Customer",
     project: "Interior trim & decorative moldings",
     quote:
       "Torchbearer removed, replaced, and painted the interior trim and installed the decorative wood panelling on the basement over-head. They were detail-oriented and communicated well, completing my projects at a fair price. I would definitely recommend them to anyone looking to have work done around the house.",
   },
   {
-    name: "Verified Homeowner",
+    name: "Torchbearer Customer",
     project: "Handyman — stair railing & small projects",
     quote:
       "Grant with Torchbearer was very helpful when I needed this stair railing replaced and multiple other small projects completed. Their communication was reliable and the results were what I was looking for. I would reccomend.",
@@ -256,19 +256,10 @@ export default function Home() {
                   font: `700 26px/1.05 ${oswald}`,
                   textTransform: "uppercase",
                   color: "#0c1d39",
+                  marginBottom: "18px",
                 }}
               >
-                Get your free estimate
-              </div>
-              <div
-                style={{
-                  margin: "6px 0 18px",
-                  font: `500 14.5px/1.45 ${barlow}`,
-                  color: "#5d5644",
-                }}
-              >
-                Tell us what you need — we&rsquo;ll send back one straight
-                number.
+                Request your free estimate
               </div>
               <QuoteForm theme="onLight" />
             </div>
@@ -298,11 +289,9 @@ export default function Home() {
                 maxWidth: "520px",
               }}
             >
-              Torchbearer was built on a simple frustration: estimates
-              that balloon, contractors who vanish, and prices that change
-              halfway through the job. We run it differently — one crew
-              accountable for the whole job, from the first walkthrough to
-              the last coat of paint.
+              Torchbearer was built on simple frustrations: estimates with
+              hidden costs and unreliable contractors. We do things
+              differently.
             </p>
             <div style={{ display: "flex", flexDirection: "column", gap: "14px", marginTop: "28px" }}>
               <div style={{ display: "flex", gap: "14px", alignItems: "flex-start" }}>
@@ -391,7 +380,7 @@ export default function Home() {
                     color: "#5d5644",
                   }}
                 >
-                  {review.project} · Review on Angi
+                  {review.project} · Review from Angi
                 </div>
               </div>
             ))}

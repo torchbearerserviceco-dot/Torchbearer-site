@@ -345,17 +345,7 @@ export default function QuoteForm({
               color: labelColor,
             }}
           >
-            Add photos{" "}
-            <span
-              style={{
-                color: mutedColor,
-                textTransform: "none",
-                letterSpacing: 0,
-                fontWeight: 500,
-              }}
-            >
-              — the more we see, the tighter the estimate
-            </span>
+            Add photos
           </span>
           <label style={dropStyle}>
             <input
