@@ -21,31 +21,6 @@ const eyebrowStyle: React.CSSProperties = {
   color: "#F4C869",
 };
 
-const checklistIconStyle: React.CSSProperties = {
-  flex: "none",
-  width: "34px",
-  height: "34px",
-  borderRadius: "8px",
-  background: "linear-gradient(135deg,#E0A028,#F4C869)",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  font: `700 16px/1 ${oswald}`,
-  color: "#0c1d39",
-};
-
-const checklistTitleStyle: React.CSSProperties = {
-  font: `700 17px/1.2 ${oswald}`,
-  textTransform: "uppercase",
-  color: "#F5ECD6",
-};
-
-const checklistBodyStyle: React.CSSProperties = {
-  marginTop: "4px",
-  font: `500 14.5px/1.5 ${barlow}`,
-  color: "#a7b8cd",
-};
-
 const reviews = [
   {
     name: "Torchbearer Customer",
@@ -226,7 +201,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* WHY + ABOUT */}
+      {/* WHY + REVIEWS */}
       <div
         className="tb-section"
         style={{
@@ -234,116 +209,83 @@ export default function Home() {
           borderTop: "1px solid rgba(169,198,226,.1)",
         }}
       >
-        <div style={{ display: "flex", flexWrap: "wrap", gap: "48px" }}>
-          <div style={{ flex: "1 1 460px", minWidth: "340px" }}>
-            <div style={eyebrowStyle}>Why Torchbearer</div>
-            <div className="tb-section-h2" style={{ marginTop: "10px", color: "#F5ECD6" }}>
-              We light the way forward.
-            </div>
-            <p
-              style={{
-                margin: "18px 0 0",
-                font: `500 16.5px/1.6 ${barlow}`,
-                color: "#a7b8cd",
-                maxWidth: "520px",
-              }}
-            >
-              Torchbearer was built on simple frustrations: estimates with
-              hidden costs and unreliable contractors. We do things
-              differently.
-            </p>
-            <div style={{ display: "flex", flexDirection: "column", gap: "14px", marginTop: "28px" }}>
-              <div style={{ display: "flex", gap: "14px", alignItems: "flex-start" }}>
-                <span style={checklistIconStyle}>✓</span>
-                <div>
-                  <div style={checklistTitleStyle}>The price is the price</div>
-                  <div style={checklistBodyStyle}>
-                    No fuel surcharges, no &ldquo;unforeseen conditions&rdquo;
-                    padding, no change-order games.
-                  </div>
-                </div>
-              </div>
-              <div style={{ display: "flex", gap: "14px", alignItems: "flex-start" }}>
-                <span style={checklistIconStyle}>✓</span>
-                <div>
-                  <div style={checklistTitleStyle}>One crew, eight trades</div>
-                  <div style={checklistBodyStyle}>
-                    Carpentry to clearing — no subcontractor roulette, no
-                    finger-pointing.
-                  </div>
-                </div>
-              </div>
-              <div style={{ display: "flex", gap: "14px", alignItems: "flex-start" }}>
-                <span style={checklistIconStyle}>✓</span>
-                <div>
-                  <div style={checklistTitleStyle}>Built for pros too</div>
-                  <div style={checklistBodyStyle}>
-                    Realtors, GCs, and facility managers get the same
-                    straight number — on a timeline you can put in a
-                    contract.
-                  </div>
-                </div>
-              </div>
-            </div>
+        <div style={{ textAlign: "center", maxWidth: "640px", margin: "0 auto" }}>
+          <div style={eyebrowStyle}>Why Torchbearer</div>
+          <div className="tb-section-h2" style={{ marginTop: "10px", color: "#F5ECD6" }}>
+            We light the way forward.
           </div>
-          <div
+          <p
             style={{
-              flex: "1 1 380px",
-              minWidth: "320px",
-              display: "flex",
-              flexDirection: "column",
-              gap: "16px",
-              justifyContent: "center",
+              margin: "18px 0 0",
+              font: `500 16.5px/1.6 ${barlow}`,
+              color: "#a7b8cd",
             }}
           >
-            {reviews.map((review) => (
+            Torchbearer was built on simple frustrations: estimates with
+            hidden costs and unreliable contractors. We do things
+            differently.
+          </p>
+        </div>
+        <div className="tb-reviews-grid" style={{ marginTop: "44px" }}>
+          {reviews.map((review) => (
+            <figure
+              key={review.project}
+              style={{
+                margin: 0,
+                display: "flex",
+                flexDirection: "column",
+                borderRadius: "14px",
+                background: "#F5ECD6",
+                padding: "30px 32px 30px",
+                boxShadow: "0 24px 60px rgba(0,0,0,.4)",
+                borderTop: "4px solid #E0A028",
+              }}
+            >
               <div
-                key={review.project}
+                aria-label="5 out of 5 stars"
+                style={{ font: `700 24px/1 ${barlow}`, letterSpacing: ".1em", color: "#E0A028" }}
+              >
+                ★★★★★
+              </div>
+              <blockquote
                 style={{
-                  borderRadius: "12px",
-                  background: "#F5ECD6",
-                  padding: "22px 24px 24px",
-                  boxShadow: "0 20px 50px rgba(0,0,0,.35)",
+                  margin: "18px 0 0",
+                  flex: 1,
+                  font: `500 19px/1.6 ${barlow}`,
+                  color: "#2f2b20",
+                }}
+              >
+                &ldquo;{review.quote}&rdquo;
+              </blockquote>
+              <figcaption
+                style={{
+                  marginTop: "22px",
+                  paddingTop: "18px",
+                  borderTop: "1px solid rgba(12,29,57,.14)",
                 }}
               >
                 <div
-                  aria-label="5 out of 5 stars"
-                  style={{ font: `700 18px/1 ${barlow}`, letterSpacing: ".08em", color: "#E0A028" }}
-                >
-                  ★★★★★
-                </div>
-                <div
                   style={{
-                    marginTop: "12px",
-                    font: `500 16.5px/1.55 ${barlow}`,
-                    color: "#3f3a2c",
-                  }}
-                >
-                  &ldquo;{review.quote}&rdquo;
-                </div>
-                <div
-                  style={{
-                    marginTop: "14px",
-                    font: `700 14px/1 ${oswald}`,
+                    font: `700 15px/1 ${oswald}`,
                     letterSpacing: ".1em",
                     textTransform: "uppercase",
                     color: "#0c1d39",
                   }}
                 >
-                  — {review.name}
+                  {review.name}
                 </div>
                 <div
                   style={{
-                    marginTop: "6px",
-                    font: `500 13px/1.35 ${barlow}`,
+                    marginTop: "7px",
+                    font: `500 13.5px/1.35 ${barlow}`,
                     color: "#5d5644",
                   }}
                 >
                   {review.project} · Review from Angi
                 </div>
-              </div>
-            ))}
-          </div>
+              </figcaption>
+            </figure>
+          ))}
         </div>
       </div>
 
